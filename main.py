@@ -17,15 +17,18 @@ states_dict = {
 }
 
 
+#Making the map a turtle object
 screen = turtle.Screen()
 screen.title("Nigeria states game")
 image = "ng-07.png.gif"
 screen.addshape(image)
 turtle.shape(image)
 
+#Creating a dataframe from the dict
 states_data = pandas.DataFrame(states_dict)
 states_data.to_csv("Nigeria States.csv")
 
+#Creating a csv file from the data frame
 data = pandas.read_csv("Nigeria States.csv")
 states = data.states.to_list()
 guessed_states = []
